@@ -4,7 +4,7 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   const { question } = req.body;
 
-  if (!question) {
+  if (!question || question.trim() === "") {
     return res.status(400).json({ error: "question is required" });
   }
 
