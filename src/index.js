@@ -1,17 +1,13 @@
 const express = require('express');
+const bodyParser = require('body-parser');
+const chatbotRoutes = require('./routes/chatbot');
+
 const app = express();
+const port = 3000;
 
-app.listen(3000, () => {
- console.log("Server running on port 3000");
-});
+app.use(bodyParser.json());
+app.use('/api/chatbot', chatbotRoutes);
 
-app.get("/msg", (req, res, next) => {
- res.json({"message": "Hello, World!"});
-});
-
-app.use(express.json()); // for parsing application/json
-
-app.post("/msg", (req, res, next) => {
- const message = req.body.message;
- res.json({"receivedMessage": message});
+app.listen(port, () => {
+  console.log(`Server is running at http://localhost:${port}`);
 });
