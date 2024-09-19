@@ -31,6 +31,16 @@ describe("POST /ask", () => {
 
     expect(response.status).toBe(400);
     expect(response.body).toHaveProperty("error");
-    expect(response.body.error).toBe("question is required");
+    expect(response.body.error).toBe("question must be a non-empty string");
+  });
+
+  it("should return 400 if the question is not a string", async () => {
+    const question = { question: 12345 };
+
+    const response = await request(app).post("/ask").send(question);
+
+    expect(response.status).toBe(400);
+    expect(response.body).toHaveProperty("error");
+    expect(response.body.error).toBe("question must be a non-empty string");
   });
 });
