@@ -4,6 +4,7 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   const { question } = req.body;
 
+  // input validation
   if (!question) {
     return res.status(400).json({ error: "question is required" });
   } else if (typeof question !== "string" || question.trim() === "") {
