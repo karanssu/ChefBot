@@ -9,7 +9,7 @@ app.use(cors({ origin: "*" }));
 app.use(express.json()); 
  
 // user 
-app.use("/user", require("./routes/user/users")); 
+app.use("/ask", require("./routes/ask")); 
  
 app.listen(SERVER_PORT, (req, res) => { 
     console.log( 
