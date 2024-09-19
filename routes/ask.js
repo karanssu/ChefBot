@@ -4,10 +4,10 @@ const router = express.Router();
 router.post("/", async (req, res) => {
   const { question } = req.body;
 
-  question = question.trim();
+  const senitizedQuestion = question.trim();
 
   res.status(201).send({
-    question: question,
+    question: senitizedQuestion,
     answer: "This is response from AI, believe me!!!",
   });
 

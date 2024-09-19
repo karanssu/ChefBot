@@ -1,0 +1,8 @@
+# Should Pass: Valid userid, trainLine, comment 
+
+POST http://localhost:4000/ask/
+Content-Type: application/json
+
+{
+    "question" : "    How are you?    "
+}
