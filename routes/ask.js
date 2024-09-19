@@ -6,7 +6,7 @@ router.post("/", async (req, res) => {
 
   question = question.trim();
 
-  res.status(200).send({
+  res.status(201).send({
     question: question,
     answer: "This is response from AI, believe me!!!",
   });
