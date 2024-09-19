@@ -1,0 +1,18 @@
+{
+    "name": "chefbot",
+    "version": "1.0.0",
+    "description": "**ChefBot** is an AI-powered chatbot designed to help users discover new recipes, plan meals, and get personalized food recommendations. By leveraging OpenAI\u00e2\u20ac\u2122s GPT-4 model, ChefBot can have natural conversations with users to understand their preferences, suggest recipes based on ingredients, and even assist with meal planning. It seamlessly integrates with a recipe website, enhancing the user experience by providing tailored food recommendations through interactive dialogue.",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node server.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "cors": "^2.8.5",
+        "dotenv": "^16.4.5",
+        "express": "^4.21.0"
+    }
+}
