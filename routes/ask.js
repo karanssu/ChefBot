@@ -1,5 +1,6 @@
 const express = require("express");
 const router = express.Router();
+const ask = require("../utils/openai/openai");
 
 router.post("/", async (req, res) => {
   const { question } = req.body;
@@ -14,10 +15,13 @@ router.post("/", async (req, res) => {
   }
 
   const senitizedQuestion = question.trim();
+  console.log(ask(question));
+
+  const answer = ask(question);
 
   res.status(201).send({
     question: senitizedQuestion,
-    answer: "This is response from AI, believe me!!!",
+    answer: answer,
   });
 });
 
