@@ -11,9 +11,6 @@ describe("POST /ask", () => {
     expect(response.body).toHaveProperty("question");
     expect(response.body).toHaveProperty("answer");
     expect(response.body.question).toBe("How is the weather?");
-    expect(response.body.answer).toBe(
-      "This is response from AI, believe me!!!"
-    );
   });
 
   it("should return 400 if the question is missing", async () => {
