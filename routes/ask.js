@@ -15,9 +15,8 @@ router.post("/", async (req, res) => {
   }
 
   const senitizedQuestion = question.trim();
-  console.log(ask(question));
 
-  const answer = ask(question);
+  const answer = await ask(question);
 
   res.status(201).send({
     question: senitizedQuestion,
